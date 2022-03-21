@@ -1,6 +1,0 @@
-module Pods_zaapiRNtest_zaapiRNtestTests {
-  umbrella header "Pods-zaapiRNtest-zaapiRNtestTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
