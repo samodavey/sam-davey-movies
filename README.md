@@ -21,5 +21,8 @@ During your interview you will need to answer questions about how you found the 
 5. Commit the changes to **your** repository.
 6. Prepare for the interview and have your camera on ;).
 
+#### NOTE
+* Please do not format the code, only make changes to fix the code, easier for reviewers to see the changes made.
+
 #### Pro tip
 * You'll notice the animated transitions in the app are not very smooth. The animation itself is *not* the problem.
