@@ -48,6 +48,10 @@ function titleCase(value: string): string {
     let title = '';
     let shouldUpcase = true;
     for (let i = 0; i < value.length; i++) {
+        //Could be further improved with a switch statement?
+        if(!shouldUpcase){
+            title += value[i].toLowerCase();
+        }
         if (shouldUpcase) {
             title += value[i].toUpperCase();
             shouldUpcase = false;
@@ -116,7 +120,7 @@ const Modal = ({movie, position, close}: ModalProps) => {
         ],
         [],
     );
-
+    //I wanted to add a relevant for loop for the reviews within the modal
     return (
         <SwipeToClose y={translationY} opacity={opacity.value} {...{scale}}>
             <Animated.View
@@ -139,6 +143,11 @@ const Modal = ({movie, position, close}: ModalProps) => {
                             </Text>
                             <Text style={styles.paragraph}>
                                 {movie.description}
+                            </Text>
+                            <Text style={styles.paragraph}>
+                            {`Reviews: ${
+                                JSON.stringify(movie.reviews[0].body)
+                            }`}
                             </Text>
                         </Text>
                     </ScrollView>

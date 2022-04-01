@@ -27,6 +27,11 @@ interface SwipeToCloseProps {
 }
 
 const SwipeToClose = ({children, y, opacity, scale: s}: SwipeToCloseProps) => {
+    /*
+        The outputRange in the interpolation was previously set to 0.75
+        This gave a very unmatched feeling as the poster would shrink 1/4 smaller than its normal size
+        Before reverting to its original height and width
+    */
     const scale = useValue(1);
     useCode(
         () => [
@@ -40,7 +45,7 @@ const SwipeToClose = ({children, y, opacity, scale: s}: SwipeToCloseProps) => {
                     scale,
                     interpolate(y, {
                         inputRange: [0, 100],
-                        outputRange: [1, 0.75],
+                        outputRange: [1, 1],
                         extrapolate: Extrapolate.CLAMP,
                     }),
                 ),
